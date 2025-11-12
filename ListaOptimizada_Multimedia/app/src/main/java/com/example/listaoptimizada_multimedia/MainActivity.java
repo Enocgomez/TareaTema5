@@ -19,22 +19,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ListaCoches = findViewById(R.id.ListaCoches);
 
         ArrayList<Coches> coches = new ArrayList<>();
 
         for(int i = 0; i < 20; i++){
-            Coches elemento = new Coches("","","");
-            coches.add(elemento);
+            coches.add(new Coches("Audi RS3", "400cv", R.drawable.imagenrs3));
+            coches.add(new Coches("BMW M4", "450cv", R.drawable.imagenM4));
+            coches.add(new Coches("FORD FOCUS RS", "350cv", R.drawable.imagenFOCUS));
         }
             ListaCoches.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        ListaCoches.setLayoutManager(llm);
+        ListaCoches.setLayoutManager(new LinearLayoutManager(this));
         Adaptador adaptador = new Adaptador(this, coches);
         ListaCoches.setAdapter(adaptador);
-        adaptador.refrescar();
 
 
 

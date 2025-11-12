@@ -2,6 +2,7 @@ package com.example.listaoptimizada_multimedia;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import android.view.View;
@@ -13,10 +14,12 @@ import java.util.ArrayList;
 public class Adaptador extends RecyclerView.Adapter<Adaptador.HolderCoches> {
     public static class HolderCoches extends RecyclerView.ViewHolder{
         TextView tModelo, tPotencia;
+        ImageView iCoche;
         HolderCoches(View itemView){
             super(itemView);
             tModelo = itemView.findViewById(R.id.tModelo);
             tPotencia = itemView.findViewById(R.id.tPotencia);
+            iCoche = itemView.findViewById(R.id.iCoche);
         }
     };
     private ArrayList<Coches> coches;
@@ -26,27 +29,25 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.HolderCoches> {
         this.contexto = contexto;
         this.coches = coches;
     }
-    public void add(ArrayList<Coches> datos){
-        coches.clear();
-        coches.addAll(datos);
 
-    }
-    public void refrescar(){notifyDataSetChanged();}
+
     @Override
     public HolderCoches onCreateViewHolder(ViewGroup parent, int viewType){
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.coches_datos,parent,false);
-        HolderCoches pvh = new HolderCoches(v);
-        return pvh;
+        return new HolderCoches(v);
+
     }
     public void onBindViewHolder(HolderCoches elementoactual,int position){
-        elementoactual.tModelo.setText(coches.get(position).getModelo());
-        elementoactual.tPotencia.setText(coches.get(position).getPotencia());
+        Coches coche = coches.get(position);
+        elementoactual.tModelo.setText(coche.getModelo());
+        elementoactual.tPotencia.setText(coche.getPotencia());
+        elementoactual.iCoche.setImageResource(coche.getImagenResId());
+
     }
     @Override
     public int getItemCount(){return coches.size();}
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView){
-        super.onAttachedToRecyclerView(recyclerView);
-    }
+
+
+
 
 }

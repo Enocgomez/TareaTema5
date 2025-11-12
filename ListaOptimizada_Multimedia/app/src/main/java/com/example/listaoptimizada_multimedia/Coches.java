@@ -4,9 +4,9 @@ public class Coches {
     private String modelo;
 
     private String potencia;
-    private String imagen;
+    private int imagen;
 
-    public Coches(String modelo, String potencia, String imagen){
+    public Coches(String modelo, String potencia, int imagen){
         this.modelo = modelo;
         this.potencia = potencia;
         this.imagen = imagen;
@@ -15,5 +15,6 @@ public class Coches {
     }
     public String getModelo(){ return modelo; }
     public String getPotencia(){ return potencia; }
+    public int getImagen() { return imagenResId; }
 
 }
