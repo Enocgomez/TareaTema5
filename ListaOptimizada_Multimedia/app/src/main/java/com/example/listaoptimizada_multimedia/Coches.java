@@ -4,7 +4,7 @@ public class Coches {
     private String modelo;
 
     private String potencia;
-    private int imagen;
+    public int imagen;
 
     public Coches(String modelo, String potencia, int imagen){
         this.modelo = modelo;
@@ -15,6 +15,6 @@ public class Coches {
     }
     public String getModelo(){ return modelo; }
     public String getPotencia(){ return potencia; }
-    public int getImagen() { return imagenResId; }
+    public int getImagen() { return imagen; }
 
 }

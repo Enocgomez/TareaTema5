@@ -24,11 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Coches> coches = new ArrayList<>();
 
-        for(int i = 0; i < 20; i++){
+
             coches.add(new Coches("Audi RS3", "400cv", R.drawable.imagenrs3));
-            coches.add(new Coches("BMW M4", "450cv", R.drawable.imagenM4));
-            coches.add(new Coches("FORD FOCUS RS", "350cv", R.drawable.imagenFOCUS));
-        }
+            coches.add(new Coches("Volkswagen Golf R", "320cv", R.drawable.imagengolfr));
+            coches.add(new Coches("BMW M4", "480cv", R.drawable.imagenbmwm4));
+            coches.add(new Coches("FORD FOCUS RS", "350cv", R.drawable.imagenfocusrs));
+            coches.add(new Coches("Honda civic Type R", "329cv", R.drawable.imagencivic));
+            coches.add(new Coches("Mercedes AMG A45S", "421cv", R.drawable.imagenmercedes));
+            coches.add(new Coches("Porsche GT3RS", "525cv", R.drawable.imagenporsche));
+
+
             ListaCoches.setHasFixedSize(true);
         ListaCoches.setLayoutManager(new LinearLayoutManager(this));
         Adaptador adaptador = new Adaptador(this, coches);

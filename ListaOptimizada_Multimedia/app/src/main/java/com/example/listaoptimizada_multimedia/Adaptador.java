@@ -29,23 +29,22 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.HolderCoches> {
         this.contexto = contexto;
         this.coches = coches;
     }
-
-
     @Override
     public HolderCoches onCreateViewHolder(ViewGroup parent, int viewType){
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.coches_datos,parent,false);
         return new HolderCoches(v);
-
     }
+    @Override
     public void onBindViewHolder(HolderCoches elementoactual,int position){
         Coches coche = coches.get(position);
         elementoactual.tModelo.setText(coche.getModelo());
         elementoactual.tPotencia.setText(coche.getPotencia());
-        elementoactual.iCoche.setImageResource(coche.getImagenResId());
-
+        elementoactual.iCoche.setImageResource(coche.getImagen());
     }
     @Override
-    public int getItemCount(){return coches.size();}
+    public int getItemCount(){
+        return coches.size();
+    }
 
 
 
