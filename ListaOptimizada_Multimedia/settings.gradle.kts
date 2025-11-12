@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LoginTema5"
-include(":app")
+rootProject.name = "ListaOptimizada_Multimedia"
 include(":app")
  
